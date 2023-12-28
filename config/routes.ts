@@ -4,7 +4,7 @@
  * @Author: shenziqiang
  * @Date: 2023-12-27 14:11:37
  * @LastEditors: shenziqiang
- * @LastEditTime: 2023-12-28 09:20:20
+ * @LastEditTime: 2023-12-28 09:42:59
  */
 /**
  * @name umi 的路由配置
@@ -54,12 +54,6 @@ export default [
     ],
   },
   {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
-  },
-  {
     path: '/',
     redirect: '/welcome',
   },
@@ -72,6 +66,15 @@ export default [
       // { path: '/sys/user', name: '用户管理' },
       { path: '/sys/role', name: '角色管理', component: './sys/role/Role' },
       // { path: '/sys/auth', name: '权限管理' },
+    ],
+  },
+  {
+    path: '/example',
+    name: '示例',
+    routes: [
+      { path: '/example', redirect: '/example/upload' },
+      { path: '/example/upload', name: '上传', component: './example/Upload' },
+      { path: '/example/qrcode', name: '二维码', component: './example/QRCode' }
     ],
   },
   {
